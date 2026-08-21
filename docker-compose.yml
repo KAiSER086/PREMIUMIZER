@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  discord-pm-bot:
+    build: .
+    container_name: discord_pm_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./downloads:/app/downloads
+      - ./logs:/app/logs
